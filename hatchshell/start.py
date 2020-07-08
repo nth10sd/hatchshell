@@ -37,7 +37,7 @@ def main() -> None:
     # sm_shell.verify()  # Consider using binaryornot
     # sm_shell.delete_objdir()
     # return the full path to the compiled binary
-    # except (propagate error code up)
+    # except: propagate error code up
 
     # elif shell_type == "javascriptcore":
     #     # try
