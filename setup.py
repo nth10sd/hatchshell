@@ -19,7 +19,7 @@ EXTRAS = {
         # "coverage>=4.5.4,<4.6",
         "flake8==3.8.3",
         "flake8-commas>=2.0.0,<2.1",
-        "flake8-isort>=3.0.0,<3.1",
+        "flake8-isort>=3.0.1,<3.1",
         "flake8-quotes>=3.2.0,<3.3",
         "isort==4.3.21",
         "mypy==0.782",
