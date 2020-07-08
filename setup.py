@@ -16,7 +16,7 @@ from setuptools import setup
 EXTRAS = {
     "test": [
         # "codecov==2.0.15",
-        "coverage>=4.5.4,<4.6",
+        # "coverage>=4.5.4,<4.6",
         "flake8==3.8.3",
         "flake8-commas>=2.0.0,<2.1",
         "flake8-isort>=3.0.1,<3.1",
@@ -25,7 +25,7 @@ EXTRAS = {
         "mypy==0.782",
         "pylint>=2.5.3,<2.6",
         "pytest>=5.4.3,<5.5",
-        "pytest-cov>=2.10.0,<2.11",
+        # "pytest-cov>=2.10.0,<2.11",
         "pytest-flake8>=1.0.6,<1.1",
         "pytest-mypy>=0.6.2,<0.7",
         "pytest-pylint>=0.17.0,<0.18",
