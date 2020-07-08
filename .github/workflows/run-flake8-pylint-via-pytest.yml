@@ -32,7 +32,7 @@ jobs:
       if: startsWith(runner.os, 'Linux')
       with:
         path: ~/.cache/pip
-        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements-test.txt') }}
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/setup.py') }}
         restore-keys: |
           ${{ runner.os }}-pip-
     # When activating macOS, verify pip cache dir at https://github.com/actions/cache/blob/master/examples.md
@@ -40,7 +40,7 @@ jobs:
     #   if: startsWith(runner.os, 'macOS')
     #   with:
     #     path: ~/Library/Caches/pip
-    #     key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements-test.txt') }}
+    #     key: ${{ runner.os }}-pip-${{ hashFiles('**/setup.py') }}
     #     restore-keys: |
     #       ${{ runner.os }}-pip-
     # When activating Windows, verify pip cache dir at https://github.com/actions/cache/blob/master/examples.md
@@ -48,7 +48,7 @@ jobs:
     #   if: startsWith(runner.os, 'Windows')
     #   with:
     #     path: ~\AppData\Local\pip\Cache
-    #     key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements-test.txt') }}
+    #     key: ${{ runner.os }}-pip-${{ hashFiles('**/setup.py') }}
     #     restore-keys: |
     #       ${{ runner.os }}-pip-
     - name: Get pip cache dir
@@ -59,7 +59,7 @@ jobs:
       uses: actions/cache@v2
       with:
         path: ${{ steps.pip-cache.outputs.dir }}
-        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements-test.txt') }}
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/setup.py') }}
         restore-keys: |
           ${{ runner.os }}-pip-
 
@@ -67,7 +67,7 @@ jobs:
       if: steps.cache.outputs.cache-hit != 'true'
       run: |
         python -m pip install --upgrade pip
-        if [ -f requirements-test.txt ]; then pip install -r requirements-test.txt; fi
+        if [ -f requirements.txt ]; then pip install -r requirements.txt '.[test]'; fi
     - name: Run with flake8 only checking for Python syntax errors or undefined names
       run: |
         # stop the build if there are Python syntax errors or undefined names
