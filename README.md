@@ -1,3 +1,5 @@
+![Non-slow tests and static analysis via pytest](https://github.com/nth10sd/hatchshell/workflows/Non-slow%20tests%20and%20static%20analysis%20via%20pytest/badge.svg)
+
 # hatchshell
 
 Compile JavaScript shells easily
@@ -12,8 +14,8 @@ TBD
 
 # Requirements
 
-hatchshell should work on major operating systems, such as Windows 10, Linux (Ubuntu LTS / Gentoo) and macOS 10.15 Catalina and up.
+Works on most operating systems, such as Windows 10, Linux (Debian-based / Ubuntu LTS / Gentoo) and macOS 10.15 Catalina and up.
 
 # Compatibility
 
-hatchshell is tested to be compatible with Python 3.8 and above. It may work with earlier versions, but no testing will be done against them.
+Compatible with Python 3.8+. It may work with earlier versions, but no CI testing will be done against them.
