@@ -25,7 +25,7 @@ EXTRAS = {
         "mypy==0.782",
         "pylint>=2.5.3,<2.6",
         "pytest>=5.4.3,<5.5",
-        "pytest-cov>=2.10.0,<2.11",
+        # "pytest-cov>=2.10.0,<2.11",
         "pytest-flake8>=1.0.6,<1.1",
         "pytest-mypy>=0.6.2,<0.7",
         "pytest-pylint>=0.17.0,<0.18",
