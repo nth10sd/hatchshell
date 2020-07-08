@@ -53,8 +53,7 @@ def main() -> None:
 
     shell.compile()
     # RUN_LOG.info("Path to: %s", shell.get_absolute_path())
-    # Generate sphinx documentation
-    # Consider putting it in github.io?
+    # Consider generating sphinx documentation
 
 
 if __name__ == "__main__":
