@@ -77,27 +77,27 @@ jobs:
       run: |
         pytest --flake8 --mypy --pylint -m "flake8 or mypy or pylint or not slow"
 
-    - name: Check versions
-      run: |
-        gcc --version
-        g++ --version
-        clang --version
-        clang++ --version
-        hg --version
-        llvm-symbolizer --version || true  # Ignore exit code if llvm-symbolizer does not exist
-        which llvm-config || true  # Find out location of llvm-config
-        export LLVM_CONFIG=/usr/local/clang-9.0.1/bin/llvm-config  # From llvm-config location
-        llvm-config --version || true  # Ignore exit code if llvm-config does not exist
-        /usr/bin/llvm-config --version || true  # Ignore exit code if llvm-config does not exist
+    # - name: Check versions
+    #   run: |
+    #     gcc --version
+    #     g++ --version
+    #     clang --version
+    #     clang++ --version
+    #     hg --version
+    #     llvm-symbolizer --version || true  # Ignore exit code if llvm-symbolizer does not exist
+    #     which llvm-config || true  # Find out location of llvm-config
+    #     export LLVM_CONFIG=/usr/local/clang-9.0.1/bin/llvm-config  # From llvm-config location
+    #     llvm-config --version || true  # Ignore exit code if llvm-config does not exist
+    #     /usr/bin/llvm-config --version || true  # Ignore exit code if llvm-config does not exist
 
-    - name: Install project prerequisites
-      run: |
-        # expect-dev is for unbuffer, not needed for now
-        sudo apt-get install gdb
-    - name: Install SpiderMonkey prerequisites
-      run: |
-        # lib32z1 is for 32-bit builds, not needed for now
-        sudo apt-get install autoconf2.13
+    # - name: Install project prerequisites
+    #   run: |
+    #     # expect-dev is for unbuffer, not needed for now
+    #     sudo apt-get install gdb
+    # - name: Install SpiderMonkey prerequisites
+    #   run: |
+    #     # lib32z1 is for 32-bit builds, not needed for now
+    #     sudo apt-get install autoconf2.13
 
     # - name: Install latest version of Rust via rustup
     #   run: |
