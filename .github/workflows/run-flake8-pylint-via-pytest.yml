@@ -68,6 +68,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt '.[test]'; fi
+
     - name: Run with flake8 only checking for Python syntax errors or undefined names
       run: |
         # stop the build if there are Python syntax errors or undefined names
@@ -75,6 +76,22 @@ jobs:
     - name: Run with flake8, mypy and pylint, and also non-slow tests, using pytest
       run: |
         pytest --flake8 --mypy --pylint -m "flake8 or mypy or pylint or not slow"
+
+    - name: Upgrade Mercurial version on test VMs
+      run: |
+        hg --version
+        pip install --upgrade mercurial
+        hg --version
+    # Consider removing this when hatchshell checks/uses this location automatically
+    - name: Set mozilla-central Mercurial repo default location
+      run: |
+        echo ::set-env name=MC_HG_REPO_PATH::$HOME/.cache/${{ github.event.repository.name }}
+        mkdir -p $MC_HG_REPO_PATH
+    - name: Clone Mercurial mozilla-central repo
+      run: |
+        date
+        time hg clone https://hg.mozilla.org/mozilla-central/ $MC_HG_REPO_PATH/mozilla-central/
+        date
     # Commented out as there are currently no slow tests
     # - name: Run only slow tests, using pytest
     #   run: |
