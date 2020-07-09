@@ -77,10 +77,8 @@ jobs:
       run: |
         pytest --flake8 --mypy --pylint -m "flake8 or mypy or pylint or not slow"
 
-    - name: Upgrade Mercurial version on test VMs
+    - name: Print Mercurial version, do not upgrade for now as 5.3.1 seems recent enough
       run: |
-        hg --version
-        pip install --upgrade mercurial
         hg --version
     - name: Set project cache folder environment variable
       run: |
