@@ -86,6 +86,8 @@ jobs:
     - name: Set mozilla-central Mercurial repo default location
       run: |
         echo ::set-env name=MC_HG_REPO_PATH::$HOME/.cache/${{ github.event.repository.name }}
+    - name: Create mozilla-central Mercurial repo default location
+      run: |
         mkdir -p "$MC_HG_REPO_PATH"
     - name: Clone Mercurial mozilla-central repo
       run: |
