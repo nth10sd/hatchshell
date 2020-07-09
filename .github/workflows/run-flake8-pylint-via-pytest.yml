@@ -82,17 +82,16 @@ jobs:
         hg --version
         pip install --upgrade mercurial
         hg --version
-    # Consider removing this when hatchshell checks/uses this location automatically
-    - name: Set mozilla-central Mercurial repo default location
+    - name: Set project cache folder environment variable
       run: |
         echo ::set-env name=MC_HG_REPO_PATH::$HOME/.cache/${{ github.event.repository.name }}
-    - name: Create mozilla-central Mercurial repo default location
+    - name: Create project cache folder
       run: |
         mkdir -p "$MC_HG_REPO_PATH"
-    - name: Clone Mercurial mozilla-central repo
+    - name: Clone Mercurial mozilla-central repo as a stream
       run: |
         date
-        time hg clone https://hg.mozilla.org/mozilla-central/ $MC_HG_REPO_PATH/mozilla-central/
+        time hg clone --stream https://hg.mozilla.org/mozilla-central/ $MC_HG_REPO_PATH/mozilla-central/
         date
     # Commented out as there are currently no slow tests
     # - name: Run only slow tests, using pytest
