@@ -98,15 +98,16 @@ jobs:
       run: |
         # lib32z1 is for 32-bit builds, not needed for now
         sudo apt-get install autoconf2.13
-    - name: Install latest version of Rust via rustup
-      run: |
-        curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs -sSf | sh -s -- -y --no-modify-path
-        source $HOME/.cargo/env
-        rustup update stable
-        which rustup
-        rustup --version
-        which rustc
-        rustc --version
+
+    # - name: Install latest version of Rust via rustup
+    #   run: |
+    #     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs -sSf | sh -s -- -y --no-modify-path
+    #     source $HOME/.cargo/env
+    #     rustup update stable
+    #     which rustup
+    #     rustup --version
+    #     which rustc
+    #     rustc --version
 
     # - name: Set project cache folder environment variable
     #   run: |
