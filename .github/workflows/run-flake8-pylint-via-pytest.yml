@@ -68,6 +68,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip setuptools wheel
         if [ -f requirements.txt ]; then pip install -r requirements.txt '.[test]'; fi
+
     - name: Run with flake8 only checking for Python syntax errors or undefined names
       run: |
         # stop the build if there are Python syntax errors or undefined names
@@ -75,6 +76,52 @@ jobs:
     - name: Run with flake8, mypy and pylint, and also non-slow tests, using pytest
       run: |
         pytest --flake8 --mypy --pylint -m "flake8 or mypy or pylint or not slow"
+
+    # - name: Check versions
+    #   run: |
+    #     gcc --version
+    #     g++ --version
+    #     clang --version
+    #     clang++ --version
+    #     hg --version
+    #     llvm-symbolizer --version || true  # Ignore exit code if llvm-symbolizer does not exist
+    #     which llvm-config || true  # Find out location of llvm-config
+    #     export LLVM_CONFIG=/usr/local/clang-9.0.1/bin/llvm-config  # From llvm-config location
+    #     llvm-config --version || true  # Ignore exit code if llvm-config does not exist
+    #     /usr/bin/llvm-config --version || true  # Ignore exit code if llvm-config does not exist
+
+    # - name: Install project prerequisites
+    #   run: |
+    #     # expect-dev is for unbuffer, not needed for now
+    #     sudo apt-get install gdb
+    # - name: Install SpiderMonkey prerequisites
+    #   run: |
+    #     # lib32z1 is for 32-bit builds, not needed for now
+    #     sudo apt-get install autoconf2.13
+
+    # - name: Install latest version of Rust via rustup
+    #   run: |
+    #     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs -sSf | sh -s -- -y --no-modify-path
+    #     source $HOME/.cargo/env
+    #     rustup update stable
+    #     which rustup
+    #     rustup --version
+    #     which rustc
+    #     rustc --version
+
+    # - name: Set project cache folder environment variable
+    #   run: |
+    #     echo ::set-env name=MC_HG_REPO_PATH::$HOME/.cache/${{ github.event.repository.name }}
+    # - name: Create project cache folder
+    #   run: |
+    #     mkdir -p "$MC_HG_REPO_PATH"
+    # - name: Clone Mercurial mozilla-central repo as a stream
+    #   run: |
+    #     date
+    #     time hg clone --stream https://hg.mozilla.org/mozilla-central/ $MC_HG_REPO_PATH/mozilla-central/
+    #     date
+
+    # prerequisite and m-c verification should be a fast compile test, and actual compilation a slow compile test
     # Commented out as there are currently no slow tests
     # - name: Run only slow tests, using pytest
     #   run: |
