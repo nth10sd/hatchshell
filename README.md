@@ -1,4 +1,4 @@
-![Non-slow tests and static analysis via pytest](https://github.com/nth10sd/hatchshell/workflows/Non-slow%20tests%20and%20static%20analysis%20via%20pytest/badge.svg)
+![pytest](https://github.com/nth10sd/hatchshell/workflows/pytest/badge.svg)
 
 # hatchshell
 
