@@ -76,7 +76,7 @@ jobs:
       run: |
         # stop the build if there are Python syntax errors or undefined names
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-    - name: Run with flake8, mypy and pylint, and also non-slow tests, using pytest
+    - name: Run with flake8, mypy and pylint, and also non-slow tests, using pytest and under code coverage
       run: |
         pytest --flake8 --mypy --pylint --cov --cov-report term-missing --no-cov-on-fail --cov-fail-under=80 \
                -m "flake8 or mypy or pylint or not slow"
