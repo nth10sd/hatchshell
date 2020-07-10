@@ -17,12 +17,12 @@ class JavaScriptCoreShell(HatchedShell):
     def __init__(self) -> None:
         super().__init__("")
 
-    @classmethod
-    def main(cls) -> None:
-        """Main function of JavaScriptCoreShell class.
-        """
+    # @classmethod
+    # def main(cls) -> None:
+    #     """Main function of JavaScriptCoreShell class.
+    #     """
 
-    @staticmethod
-    def compile() -> None:
-        """Build a shell
-        """
+    # @staticmethod
+    # def compile() -> None:
+    #     """Build a shell
+    #     """

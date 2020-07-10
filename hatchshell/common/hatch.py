@@ -34,3 +34,13 @@ class HatchedShell:
         :returns: Supported shells
         """
         return ["spidermonkey", "javascriptcore"]
+
+    # @classmethod
+    # def main(cls) -> None:
+    #     """Main function of HatchedShell class.
+    #     """
+
+    # @staticmethod
+    # def compile() -> None:
+    #     """Build a shell
+    #     """

@@ -17,12 +17,12 @@ class SpiderMonkeyShell(HatchedShell):
     def __init__(self) -> None:
         super().__init__("")
 
-    @classmethod
-    def main(cls) -> None:
-        """Main function of SpiderMonkeyShell class.
-        """
+    # @classmethod
+    # def main(cls) -> None:
+    #     """Main function of SpiderMonkeyShell class.
+    #     """
 
-    @staticmethod
-    def compile() -> None:
-        """Build a shell
-        """
+    # @staticmethod
+    # def compile() -> None:
+    #     """Build a shell
+    #     """

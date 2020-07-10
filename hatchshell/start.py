@@ -27,7 +27,8 @@ def main() -> None:
 
     # if shell_type == "spidermonkey":
     # try
-    shell = SpiderMonkeyShell()
+    # shell = SpiderMonkeyShell()
+    SpiderMonkeyShell()
 
     # Should these be within SpiderMonkeyShell??
     # sm_shell.prereqs.check()  # Should call os.check() and repo.check()
@@ -51,7 +52,7 @@ def main() -> None:
     #     # return the full path to the compiled binary
     #     # except (propagate error code up)
 
-    shell.compile()
+    # shell.compile()
     # RUN_LOG.info("Path to: %s", shell.get_absolute_path())
     # Consider generating sphinx documentation
 
