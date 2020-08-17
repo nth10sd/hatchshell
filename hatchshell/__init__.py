@@ -2,11 +2,10 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
-"""hatchshell - Compile JavaScript shells easily"""
+"""Module details"""
 
-from typing import Any
-from typing import List
-
+__title__ = "hatchshell"
 __version__ = "0.0.1"
 __author__ = "Gary Kwong <nth10sd@gmail.com>"
-__all__: List[Any] = []
+__license__ = "MPL 2.0"
+__copyright__ = "Copyright 2020 Gary Kwong"

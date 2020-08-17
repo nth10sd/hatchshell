@@ -130,3 +130,7 @@ jobs:
     # - name: Run only slow tests, using pytest
     #   run: |
     #     python -u -m pytest -m "slow"
+
+    # - name: Upload coverage report to codecov
+    #   if: ${{ success() }}
+    #   run: bash <(curl -s https://codecov.io/bash)

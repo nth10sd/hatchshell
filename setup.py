@@ -15,7 +15,6 @@ from setuptools import setup
 
 EXTRAS = {
     "test": [
-        # "codecov==2.0.15",
         "coverage>=5.2,<5.3",
         "flake8==3.8.3",
         "flake8-commas>=2.0.0,<2.1",
@@ -47,7 +46,7 @@ setup(
     #     "console_scripts": ["hatchshell = hatchshell.start:main"],
     # },
     packages=find_packages(exclude=("tests",)),
-    # package_data={"funfuzz": [
+    # package_data={"hatchshell": [
     #     "<relative path to non-Python files>/*",
     # ]},
 
