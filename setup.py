@@ -28,6 +28,7 @@ EXTRAS = {
         "pytest-flake8>=1.0.6,<1.1",
         "pytest-mypy>=0.6.2,<0.7",
         "pytest-pylint>=0.17.0,<0.18",
+        "sphinx==3.2.1",
     ]}
 
 setup(
