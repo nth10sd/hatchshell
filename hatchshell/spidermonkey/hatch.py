@@ -4,6 +4,8 @@
 
 """Hatch a SpiderMonkey shell."""
 
+from __future__ import annotations
+
 from hatchshell.common.hatch import HatchedShell
 
 

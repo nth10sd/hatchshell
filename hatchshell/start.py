@@ -4,6 +4,8 @@
 
 """Start hatching a shell as required."""
 
+from __future__ import annotations
+
 import logging
 
 from hatchshell.spidermonkey.hatch import SpiderMonkeyShell

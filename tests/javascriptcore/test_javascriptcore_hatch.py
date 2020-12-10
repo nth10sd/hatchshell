@@ -4,6 +4,8 @@
 
 """Test hatching a JavaScriptCoreShell."""
 
+from __future__ import annotations
+
 import pytest
 
 from hatchshell.javascriptcore import hatch

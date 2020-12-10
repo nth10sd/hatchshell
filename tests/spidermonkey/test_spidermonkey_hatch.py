@@ -4,6 +4,8 @@
 
 """Test hatching a SpiderMonkeyShell."""
 
+from __future__ import annotations
+
 import pytest
 
 from hatchshell.spidermonkey import hatch

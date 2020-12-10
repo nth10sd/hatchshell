@@ -4,6 +4,8 @@
 
 """Test hatching a common shell."""
 
+from __future__ import annotations
+
 from pathlib import Path
 
 from hatchshell.common import hatch
