@@ -6,16 +6,13 @@
 
 from __future__ import annotations
 
-import logging
+from logging import INFO as INFO_LOG_LEVEL
 
 from hatchshell.spidermonkey.hatch import SpiderMonkeyShell
+from hatchshell.util.logging import get_logger
 
-RUN_LOG = logging.getLogger("run_log")
-logging.basicConfig(
-    format="%(asctime)s %(name)-8s %(levelname)-8s {%(module)s} [%(funcName)s] %(message)s",
-    datefmt="%m-%d %H:%M:%S", level=logging.INFO,
-)
-logging.getLogger("flake8").setLevel(logging.ERROR)
+RUN_LOG = get_logger(__name__)
+RUN_LOG.setLevel(INFO_LOG_LEVEL)
 
 
 def main() -> None:
