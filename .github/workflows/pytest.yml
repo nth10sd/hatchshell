@@ -79,7 +79,7 @@ jobs:
                   $(find . -type f -name "*.py" ! -name "conf_correct.py") \
                     | awk '/ matches/ && !/ contained matches/' \
                     | cut -d' ' -f1) -lt 1 ] ;
-        then exit 0 ; else exit 1 ; fi ;
+        then exit 0 ; else exit 2 ; fi ;
 
     - name: Install dependencies
       if: steps.cache.outputs.cache-hit != 'true'
