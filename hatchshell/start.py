@@ -19,8 +19,9 @@ def main() -> None:
     """Start hatching a shell."""
     # Support SpiderMonkey and JavaScriptCore
     # Check prerequisites, fail early.
-    # dpkg for debian/ubuntu: https://askubuntu.com/questions/423355/how-do-i-check-if-a-package-is-installed-on-my-server
-    # emerge -p firefox for gentoo: https://forums.gentoo.org/viewtopic-t-855048-start-0.html
+    # dpkg for ubuntu, how to check if package installed: https://askubuntu.com/q/423355
+    # emerge -p firefox for gentoo:
+    # https://forums.gentoo.org/viewtopic-t-855048-start-0.html
     # Homebrew for macOS, ?? for Windows
     # Check hg/git trees present
 
@@ -32,8 +33,11 @@ def main() -> None:
     # Should these be within SpiderMonkeyShell??
     # sm_shell.prereqs.check()  # Should call os.check() and repo.check()
 
-    # # argparse to accept parameters for build_options, possibly randomizing. Not priority yet
-    # sm_shell.compile("--enable-debug and other standard options")  # configuration and compilation here
+    # # argparse to accept parameters for build_options, possibly randomizing.
+    # # Not priority yet
+
+    # # configuration and compilation here
+    # sm_shell.compile("--enable-debug and other standard options")
     # sm_shell.verify()  # Consider using binaryornot
     # sm_shell.delete_objdir()
     # return the full path to the compiled binary
@@ -44,8 +48,11 @@ def main() -> None:
     #     jsc_shell = javascriptcore.hatch.JavaScriptCoreShell()
     #     jsc_shell.prereqs.check()  # Should call os.check() and repo.check()
 
-    #     # argparse to accept parameters for build_options, possibly randomizing. Not priority yet
-    #     jsc_shell.compile("--enable-debug and other standard options")  # configuration and compilation here
+    #     # argparse to accept parameters for build_options, possibly randomizing.
+    #     # Not priority yet
+
+    #     # configuration and compilation here
+    #     jsc_shell.compile("--enable-debug and other standard options")
     #     jsc_shell.verify()  # Consider using binaryornot
     #     jsc_shell.delete_objdir()
     #     # return the full path to the compiled binary

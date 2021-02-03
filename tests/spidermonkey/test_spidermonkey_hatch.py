@@ -14,4 +14,5 @@ from hatchshell.spidermonkey import hatch
 def test_spidermonkeyshell() -> None:
     """Test a SpiderMonkeyShell."""
     with pytest.raises(AssertionError):
-        hatch.SpiderMonkeyShell()  # SpiderMonkeyShell hardcoded to set shell_type as empty string ""
+        # SpiderMonkeyShell hardcoded to set shell_type as empty string ""
+        hatch.SpiderMonkeyShell()

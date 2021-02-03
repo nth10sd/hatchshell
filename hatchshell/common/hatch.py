@@ -22,7 +22,9 @@ class HatchedShell:
     def __init__(self, shell_type: str):
         self.shell_path = Path()
         self.shell_type = shell_type
-        assert self.shell_type in self.get_supported(), "Other js shells, e.g. V8 and Edge Chromium are not yet supported"
+        assert (
+            self.shell_type in self.get_supported()
+        ), "Other js shells, e.g. V8 and Edge Chromium are not yet supported"
 
     def get_absolute_path(self) -> Path:
         """Get the absolute path of the newly compiled JavaScript shell.
