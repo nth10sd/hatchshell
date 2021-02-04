@@ -7,7 +7,6 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import List
 
 
 class HatchedShellError(Exception):
@@ -33,7 +32,7 @@ class HatchedShell:
         return self.shell_path
 
     @staticmethod
-    def get_supported() -> List[str]:
+    def get_supported() -> list[str]:  # pylint: disable=unsubscriptable-object
         """Get a list of supported JavaScript shells.
         :returns: Supported shells
         """
