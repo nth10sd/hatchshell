@@ -15,14 +15,16 @@ from pathlib import Path
 class HatchedShell:
     """This object represents an actual compiled JS shell.
     :param shell_type: type of shell, can be spidermonkey or javascriptcore
+    :raise ValueError: When an unsupported js shell is specified
     """
 
     def __init__(self, shell_type: str):
         self.shell_path = Path()
         self.shell_type = shell_type
-        assert (
-            self.shell_type in self.get_supported()
-        ), "Other js shells, e.g. V8 and Edge Chromium are not yet supported"
+        if self.shell_type not in self.get_supported():
+            raise ValueError(
+                "Other js shells, e.g. V8 and Edge Chromium are not yet supported",
+            )
 
     def get_absolute_path(self) -> Path:
         """Get the absolute path of the newly compiled JavaScript shell.

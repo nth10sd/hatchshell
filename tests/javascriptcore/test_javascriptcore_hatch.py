@@ -13,6 +13,6 @@ from hatchshell.javascriptcore import hatch
 
 def test_javascriptcoreshell() -> None:
     """Test a JavaScriptCoreShell."""
-    with pytest.raises(AssertionError):
+    with pytest.raises(ValueError):
         # JavaScriptCoreShell hardcoded to set shell_type as empty string ""
         hatch.JavaScriptCoreShell()

@@ -13,5 +13,5 @@ from hatchshell import start
 
 def test_main() -> None:
     """Test the main() function."""
-    with pytest.raises(AssertionError):
+    with pytest.raises(ValueError):
         start.main()  # SpiderMonkeyShell hardcoded to set shell_type as empty string ""
