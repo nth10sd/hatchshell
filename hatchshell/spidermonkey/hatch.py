@@ -8,9 +8,8 @@ from __future__ import annotations
 
 from hatchshell.common.hatch import HatchedShell
 
-
-class SpiderMonkeyShellError(Exception):
-    """Error class unique to SpiderMonkeyShell objects."""
+# class SpiderMonkeyShellError(Exception):
+#     """Error class unique to SpiderMonkeyShell objects."""
 
 
 class SpiderMonkeyShell(HatchedShell):

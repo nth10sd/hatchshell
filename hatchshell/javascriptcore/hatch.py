@@ -8,9 +8,8 @@ from __future__ import annotations
 
 from hatchshell.common.hatch import HatchedShell
 
-
-class JavaScriptCoreShellError(Exception):
-    """Error class unique to JavaScriptCoreShell objects."""
+# class JavaScriptCoreShellError(Exception):
+#     """Error class unique to JavaScriptCoreShell objects."""
 
 
 class JavaScriptCoreShell(HatchedShell):

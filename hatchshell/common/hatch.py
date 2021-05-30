@@ -8,9 +8,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
-
-class HatchedShellError(Exception):
-    """Error class unique to HatchedShell objects."""
+# class HatchedShellError(Exception):
+#     """Error class unique to HatchedShell objects."""
 
 
 class HatchedShell:
