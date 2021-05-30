@@ -104,6 +104,10 @@ jobs:
       run: |
         python -u -m pytest --bandit --black --flake8 --mypy --pylint -m "not slow" --cov --cov-report term-missing --no-cov-on-fail --cov-fail-under=80
 
+    - uses: codecov/codecov-action@v1
+      with:
+        fail_ci_if_error: true # optional (default = false)
+
     # - name: Check versions
     #   run: |
     #     gcc --version
@@ -153,7 +157,3 @@ jobs:
     # - name: Run only slow tests, using pytest
     #   run: |
     #     python -u -m pytest -m "slow"
-
-    # - name: Upload coverage report to codecov
-    #   if: ${{ success() }}
-    #   run: bash <(curl -s https://codecov.io/bash)
