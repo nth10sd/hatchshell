@@ -69,12 +69,15 @@ jobs:
           ${{ runner.os }}-pip-
 
     - name: Install OS prerequisites
+      if: startsWith(runner.os, 'Linux')
       run: sudo apt-get install ripgrep
     - name: Search for existing linter ignore lines in Python
+      if: startsWith(runner.os, 'Linux')
       run: |
         rg -t py --stats "(?:(?:flake8|noqa|pylint|type): *(?:disable|ignore|noqa|[A-Z][0-9][0-9][0-9])| Any|REPLACEME)" \
           $(find . -type f -name "*.py" ! -name "conf_correct.py") || true
     - name: Ensure we are not increasing the number of ignore lines as a guideline
+      if: startsWith(runner.os, 'Linux')
       run: |
         if [ $(rg -t py --stats \
                   "(?:(?:flake8|noqa|pylint|type): *(?:disable|ignore|noqa|[A-Z][0-9][0-9][0-9])| Any|REPLACEME)" \
@@ -86,17 +89,20 @@ jobs:
     - name: Install dependencies
       if: steps.cache.outputs.cache-hit != 'true'
       run: |
-        python -u -m pip install --upgrade pip setuptools wheel
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        python -u -m pip install --upgrade pip setuptools wheel pyupgrade_directories
+        pip install -r requirements.txt
 
     - name: Run with flake8 only checking for Python syntax errors or undefined names
       run: |
         # stop the build if there are Python syntax errors or undefined names
         python -u -m flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+    - name: Run with pyupgrade to find code that can be written in a more modern way
+      run: pyup_dirs --py39-plus --recursive .
+    - name: Run with vulture to find dead code
+      run: python -u -m vulture hatchshell/ tests/ .vulture_allowlist
     - name: Run tools using pytest, and also non-slow tests under code coverage
       run: |
-        python -u -m pytest --black --flake8 --mypy --pylint -m "not slow" \
-          --cov --cov-report term-missing --no-cov-on-fail --cov-fail-under=80
+        python -u -m pytest --bandit --black --flake8 --mypy --pylint -m "not slow" --cov --cov-report term-missing --no-cov-on-fail --cov-fail-under=80
 
     # - name: Check versions
     #   run: |
