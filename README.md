@@ -16,7 +16,3 @@ TBD
 # Requirements
 
 Works on most operating systems, such as Windows 10, Linux (Debian-based / Ubuntu LTS / Gentoo) and macOS 10.15 Catalina and up.
-
-# Compatibility
-
-Compatible with Python 3.8+. It may work with earlier versions, but no CI testing will be done against them.
