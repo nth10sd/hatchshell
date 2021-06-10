@@ -2,8 +2,6 @@
 source =
     hatchshell/
     tests/
-omit =
-    hatchshell/__main__.py
 
 [report]
 # Taken from: https://coverage.readthedocs.io/en/coverage-5.5/config.html#syntax
