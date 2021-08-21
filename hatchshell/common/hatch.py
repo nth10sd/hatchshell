@@ -33,7 +33,7 @@ class HatchedShell:
         return self.shell_path
 
     @staticmethod
-    def get_supported() -> list[str]:  # pylint: disable=unsubscriptable-object
+    def get_supported() -> list[str]:
         """Get a list of supported JavaScript shells.
         :returns: Supported shells
         """
