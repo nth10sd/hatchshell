@@ -8,11 +8,12 @@ from __future__ import annotations
 
 import pytest
 
+from hatchshell.common.hatch import HatchedShellError
 from hatchshell.spidermonkey import hatch
 
 
 def test_spidermonkeyshell() -> None:
     """Test a SpiderMonkeyShell."""
-    with pytest.raises(ValueError):
+    with pytest.raises(HatchedShellError):
         # SpiderMonkeyShell hardcoded to set shell_type as empty string ""
         hatch.SpiderMonkeyShell()

@@ -8,21 +8,22 @@ from __future__ import annotations
 
 from pathlib import Path
 
-# class HatchedShellError(Exception):
-#     """Error class unique to HatchedShell objects."""
+
+class HatchedShellError(Exception):
+    """Error class unique to HatchedShell objects."""
 
 
 class HatchedShell:
     """This object represents an actual compiled JS shell.
     :param shell_type: type of shell, can be spidermonkey or javascriptcore
-    :raise ValueError: When an unsupported js shell is specified
+    :raise HatchedShellError: When an unsupported js shell is specified
     """
 
     def __init__(self, shell_type: str):
         self.shell_path = Path()
         self.shell_type = shell_type
         if self.shell_type not in self.get_supported():
-            raise ValueError(
+            raise HatchedShellError(
                 "Other js shells, e.g. V8 and Edge Chromium are not yet supported",
             )
 

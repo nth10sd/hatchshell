@@ -8,11 +8,12 @@ from __future__ import annotations
 
 import pytest
 
+from hatchshell.common.hatch import HatchedShellError
 from hatchshell.javascriptcore import hatch
 
 
 def test_javascriptcoreshell() -> None:
     """Test a JavaScriptCoreShell."""
-    with pytest.raises(ValueError):
+    with pytest.raises(HatchedShellError):
         # JavaScriptCoreShell hardcoded to set shell_type as empty string ""
         hatch.JavaScriptCoreShell()

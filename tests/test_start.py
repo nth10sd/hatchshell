@@ -9,9 +9,10 @@ from __future__ import annotations
 import pytest
 
 from hatchshell import start
+from hatchshell.common.hatch import HatchedShellError
 
 
 def test_main() -> None:
     """Test the main() function."""
-    with pytest.raises(ValueError):
+    with pytest.raises(HatchedShellError):
         start.main()  # SpiderMonkeyShell hardcoded to set shell_type as empty string ""
