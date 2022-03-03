@@ -70,7 +70,7 @@ jobs:
 
     - name: Install OS prerequisites
       if: startsWith(runner.os, 'Linux')
-      run: sudo apt-get install ripgrep
+      run: sudo apt-get update ; sudo apt-get install ripgrep
     - name: Search for existing linter ignore lines in Python
       if: startsWith(runner.os, 'Linux')
       run: |
@@ -132,11 +132,11 @@ jobs:
     # - name: Install project prerequisites
     #   run: |
     #     # expect-dev is for unbuffer, not needed for now
-    #     sudo apt-get install gdb
+    #     sudo apt-get update ; sudo apt-get install gdb
     # - name: Install SpiderMonkey prerequisites
     #   run: |
     #     # lib32z1 is for 32-bit builds, not needed for now
-    #     sudo apt-get install autoconf2.13
+    #     sudo apt-get update ; sudo apt-get install autoconf2.13
 
     # - name: Install latest version of Rust via rustup
     #   run: |
