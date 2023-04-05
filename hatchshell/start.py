@@ -65,5 +65,5 @@ def main() -> None:
 
 if __name__ == "__main__":
     # Ideally main() should return 1 or 0 depending on how the compilation turned out.
-    # sys.exit(main())
+    # raise SystemExit(main())
     main()
